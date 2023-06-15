@@ -25,7 +25,7 @@
   <parent>
     <groupId>org.xwiki.contrib</groupId>
     <artifactId>parent-platform</artifactId>
-    <version>13.10.2</version>
+    <version>14.10.11</version>
   </parent>
   <artifactId>xwiki-restserver</artifactId>
   <version>4.1-SNAPSHOT</version>
@@ -33,13 +33,22 @@
   <packaging>pom</packaging>
   <properties>
     <!-- Version of third-party libraries -->
-    <commons.version>13.10.2</commons.version>
-    <resteasy.version>5.0.1.Final</resteasy.version>
-    <jackson.version>2.13.0</jackson.version>
+    <commons.version>14.10.11</commons.version>
+    <resteasy.version>5.0.7.Final</resteasy.version>
+    <jackson.version>2.15.2</jackson.version>
     <jackson.databind.version>${jackson.version}</jackson.databind.version>
-    <undertow.version>2.2.7.Final</undertow.version>
-    <logback.version>1.2.10</logback.version>
-    <slf4j.version>1.7.32</slf4j.version>
+    <undertow.version>2.2.25.Final</undertow.version>
+    <version.io.undertow.undertow-core>${undertow.version}</version.io.undertow.undertow-core>
+    <version.org.apache.httpcomponents.httpclient>4.5.14</version.org.apache.httpcomponents.httpclient>
+    <logback.version>1.4.8</logback.version>
+    <slf4j.version>2.0.7</slf4j.version>
+    <!--
+      This project don't have plataform depdencies conflict
+      On XWiki this restrictions are to maintain support for Tomcat 9
+    -->
+    <xwiki.enforcer.enforce-jaxrs1.skip>true</xwiki.enforcer.enforce-jaxrs1.skip>
+    <xwiki.enforcer.enforce-jakarta.annotation-api.skip>true</xwiki.enforcer.enforce-jakarta.annotation-api.skip>
+    <xwiki.enforcer.enforce-glasshfish-jaxb.skip>true</xwiki.enforcer.enforce-glasshfish-jaxb.skip>
   </properties>
   <modules>
     <module>xwiki-restserver-api</module>
